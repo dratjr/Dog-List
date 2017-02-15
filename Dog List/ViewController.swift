@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let dogs: [String] = ["Basset Hound", "Boxer", "Bulldog", "Chihuahua", "Daschund", "German Shepherd", "Greyhound", "Pitbull", "Poodle", "Pug"]
     
     //UIImage array for dog pictures
-    var dogPics: [UIImage] = [UIImage(named:"basset hound.jpg")!, UIImage(named:"boxer.jpg")!, UIImage(named:"chihuahua.jpg")!, UIImage(named:"daschund.jpg")!, UIImage(named:"german shepherd.jpg")!, UIImage(named:"greyhound.jpg")!, UIImage(named:"pitbull.jpg")!, UIImage(named:"poodle.jpg")!, UIImage(named:"pug.jpg")!]
+    var dogPics: [UIImage] = [UIImage(named:"basset hound.jpg")!, UIImage(named:"boxer.jpg")!, UIImage(named:"bulldog.jpg")!, UIImage(named:"chihuahua.jpg")!, UIImage(named:"daschund.jpg")!, UIImage(named:"german shepherd.jpg")!, UIImage(named:"greyhound.jpg")!, UIImage(named:"pitbull.jpg")!, UIImage(named:"poodle.jpg")!, UIImage(named:"pug.jpg")!]
     
     let cellReusableIdentifier = "cell"
     
@@ -28,12 +28,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //Set delegate and data source
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
     
     //Number of rows in tableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print(self.dogs.count)
+        print("Dog array size is ", self.dogs.count)
         return self.dogs.count
     }
     
@@ -44,6 +45,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         cell.myCellLabel.text = self.dogs[indexPath.row]
         cell.myImageView.image = self.dogPics[indexPath.row]
+        
+        print(dogPics[indexPath.row])
         
         return cell
     }
