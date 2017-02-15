@@ -31,6 +31,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //Number of rows in tableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        print(self.dogs.count)
         return self.dogs.count
     }
     
@@ -39,8 +41,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell:MyCustomCell = self.tableView.dequeueReusableCell(withIdentifier: cellReusableIdentifier) as! MyCustomCell
 
-        
-        //cell.myImageView.backgroundColor = self.colors[indexPath.row]
         cell.myCellLabel.text = self.dogs[indexPath.row]
         cell.myImageView.image = self.dogPics[indexPath.row]
         
@@ -49,7 +49,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("You tapped cell number \(indexPath.row).")
+        //print("You tapped cell number \(indexPath.row).")
     }
 
     override func didReceiveMemoryWarning() {
