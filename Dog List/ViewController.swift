@@ -13,11 +13,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //String array for dog names
     let dogs: [String] = ["Basset Hound", "Boxer", "Bulldog", "Chihuahua", "Daschund", "German Shepherd", "Greyhound", "Pitbull", "Poodle", "Pug"]
     
+    //UIImage array for dog pictures
     var dogPics: [UIImage] = [UIImage(named:"basset hound.jpg")!, UIImage(named:"boxer.jpg")!, UIImage(named:"chihuahua.jpg")!, UIImage(named:"daschund.jpg")!, UIImage(named:"german shepherd.jpg")!, UIImage(named:"greyhound.jpg")!, UIImage(named:"pitbull.jpg")!, UIImage(named:"poodle.jpg")!, UIImage(named:"pug.jpg")!]
     
-    
-    
     let cellReusableIdentifier = "cell"
+    
     
     @IBOutlet var tableView: UITableView!
     
@@ -25,6 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Set delegate and data source
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -47,6 +48,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    //Action when row is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //print("You tapped cell number \(indexPath.row).")
